@@ -1,0 +1,68 @@
+[user]
+  name = Prasanna Natarajan
+  email = prasann87@gmail.com
+
+[alias]
+  a = add
+  s = status -s
+  ss = status
+
+  cl = clone
+
+  # Add first, see the diffs in an editor, and then commit.
+  ci = commit -v
+  # Add first, and then quickly commit in the terminal.
+  cm = commit -m
+  # Auto-stage all modified and deleted files, and then go for the kill.
+  ca = commit -v -a
+  # Auto-stage, and then quickly commit in the terminal.
+  cam = commit -a -m
+  amend = commit --amend
+
+  co = checkout
+  br = branch
+  bra = branch -a
+
+  lg = log --graph --pretty=format:"%C(bold\\ red)%h%Creset\\ -%C(yellow)%d%Creset\\ %s\\ %Cgreen(%cr)\\ %C(bold\\ blue)%Creset" --abbrev-commit --date=short
+
+  rb = rebase
+  d = difftool
+	up = "!git remote update -p; git merge --ff-only @{u}"
+
+[push]
+  default = upstream
+[pull]
+  default = current
+[diff]
+  tool = gvimdiff
+  memonicprefix = true
+[branch]
+  autosetuprebase = always
+[apply]
+  whitespace = nowarn
+
+[color]
+  diff = always
+  ui = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow bold
+  changed = green
+  untracked = cyan
+
+[diff]
+  tool = vimdiff
+[difftool]
+  prompt = false
+[content]
+  editor = "vim -w"
+[merge]
+	conflictstyle = diff3
