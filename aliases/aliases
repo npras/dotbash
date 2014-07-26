@@ -42,7 +42,7 @@ alias remove='sudo apt-get remove '
 alias purge='sudo apt-get --purge remove '
 
 # create a directory and enter it
-function take {
+take() {
   mkdir $1
   cd $1
 }
