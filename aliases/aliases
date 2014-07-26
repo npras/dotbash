@@ -1,4 +1,5 @@
-alias ll='ls --group-directories-first -alCF'
+alias ll='ls -ll --group-directories-first'
+alias lla='ls -ll --group-directories-first -a'
 alias la='ls --group-directories-first -ACF'
 alias l='ls --group-directories-first -CF'
 alias c="clear && l"
