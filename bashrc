@@ -6,6 +6,8 @@
 . ~/bin/dotfiles/dotbash/aliases/git
 . ~/bin/dotfiles/dotbash/aliases/folders
 
+. ~/bin/dotfiles/dotbash/funcs
+
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
