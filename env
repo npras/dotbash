@@ -15,3 +15,4 @@ export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
 # Jekyll environment variables for source and destination
 export JEKYLL_SOURCE="/home/prasanna/Dropbox/jekyllblog"
 export JEKYLL_DESTINATION="/home/prasanna/Dropbox/wordpras.github.io"
+export BLOG_EDITOR="gvim"
