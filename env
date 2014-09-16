@@ -20,5 +20,5 @@ export PINBOARD_API="npras:9d6867fcd5c2d1058cda"
 export JEKYLL_SOURCE="/home/prasanna/src/projects/jekyll/jekyllblog"
 export JEKYLL_DESTINATION="/home/prasanna/src/projects/jekyll/npras.in_site"
 # Jekyll: StevePavlinaTlDr.in
-export SP_JEKYLL_SOURCE="/home/prasanna/src/projects/jekyll/stevepavlinajekyll"
-export SP_JEKYLL_DESTINATION="/home/prasanna/src/projects/jekyll/stevepavlina_site"
+export SP_JEKYLL_SOURCE="/home/prasanna/src/projects/jekyll/jekyll_stevepavlinatldr"
+export SP_JEKYLL_DESTINATION="/home/prasanna/src/projects/jekyll/stevepavlinatldr.in"
