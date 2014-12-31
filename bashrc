@@ -5,6 +5,7 @@
 . ~/bin/dotfiles/dotbash/aliases/aliases
 . ~/bin/dotfiles/dotbash/aliases/git
 . ~/bin/dotfiles/dotbash/aliases/folders
+. ~/bin/dotfiles/dotbash/aliases/server
 
 . ~/bin/dotfiles/dotbash/funcs
 
