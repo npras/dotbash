@@ -30,7 +30,7 @@
 	up = "!git remote update -p; git merge --ff-only @{u}"
 
 [push]
-  default = upstream
+	default = current
 [pull]
   default = current
 [diff]
