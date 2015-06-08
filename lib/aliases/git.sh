@@ -1,5 +1,6 @@
 alias gs="git status"
-alias gg="echo 'cmd: gk=gitg --all&' && gitg --all&"
+alias gdf="git diff "
+alias gdfc="git diff --cached "
 
 gl() {
   if [ -n "$1" ]; then

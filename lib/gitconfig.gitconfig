@@ -34,7 +34,6 @@
 [pull]
   default = current
 [diff]
-  tool = gvimdiff
   memonicprefix = true
 [branch]
   autosetuprebase = always
@@ -43,7 +42,7 @@
 
 [color]
   diff = always
-  ui = auto
+  ui = true
 [color "branch"]
   current = yellow reverse
   local = yellow

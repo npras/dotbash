@@ -1,4 +1,11 @@
+# create a directory and enter it
+take() {
+  mkdir $1
+  cd $1
+}
+
 psgrep() {
+  echo 'cmd: ps -ef | grep '
   ps -ef | grep $1
 }
 

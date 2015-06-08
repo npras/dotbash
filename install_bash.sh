@@ -6,7 +6,7 @@ if [ -f "$bashrc" ]; then
   mv $bashrc $bashrc.bckp
 fi
 
-ln -s `pwd`/bashrc $bashrc
+ln -s `pwd`/bashrc.bashrc $bashrc
 if [ "$?" -eq 0 ]; then
   echo "Enjoy your Bash experience :)"
 fi

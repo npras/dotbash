@@ -12,14 +12,9 @@ alias dbash='cd ~/bin/dotfiles/dotbash && clear && l'
 
 # Code
 alias src="cd ~/src && clear && l"
-alias rl="cd ~/src/rails && clear && l"
-alias rb="cd ~/src/ruby && clear && l"
-alias javascript="cd ~/src/javascript && clear && l"
+alias re="cd ~/src/re && clear && l"
 alias notes="cd ~/src/notes && clear && l"
 alias projects="cd ~/src/projects && clear && l"
 
 # Dropbox aliases
 alias drop="cd ~/Dropbox && clear && l"
-alias blog="cd ~/src/projects/jekyll/jekyllblog && clear && l"
-alias ideas="cd ~/Dropbox/docs/Ideas && clear && l"
-alias pd="cd ~/Dropbox/pd && clear && l"
