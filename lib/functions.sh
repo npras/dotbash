@@ -5,8 +5,8 @@ take() {
 }
 
 psgrep() {
-  echo 'cmd: ps -ef | grep '
-  ps -ef | grep $1
+  echo 'cmd: ps -ef | grep -i '
+  ps -ef | grep -i $1
 }
 
 clock() {
