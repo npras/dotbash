@@ -1,5 +1,5 @@
-alias ll='ls -ll --group-directories-first'
-alias lla='ls -ll --group-directories-first -a'
+alias ll='ls -llh --group-directories-first'
+alias lla='ls -llh --group-directories-first -a'
 alias la='ls --group-directories-first -ACF'
 alias l='ls --group-directories-first -CF'
 alias ..='cd .. && l'
@@ -11,6 +11,7 @@ alias netstats="netstat -nlpt | grep "
 alias murder="echo 'cmd: kill -9 ' && kill -9 "
 alias rmrf="echo 'cmd: rm -rf' && rm -rf "
 alias g="git "
+alias e="mvim ."
 
 # size commands
 alias size="echo 'dush - current dir size' &&
