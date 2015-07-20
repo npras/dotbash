@@ -10,8 +10,9 @@ alias dvim='cd ~/.dotfiles/dotvim && clear && l'
 alias dbash='cd ~/.dotfiles/dotbash && clear && l'
 
 # Code
-alias src="cd ~/src && clear && l"
 alias re="cd ~/src/re && clear && l"
+alias src="cd ~/src && clear && l"
+alias thirty="cd ~/src/thirty && clear && l"
 
 # Dropbox
 alias drop="cd ~/Dropbox && clear && l"
