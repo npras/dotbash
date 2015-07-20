@@ -11,7 +11,6 @@ alias netstats="netstat -nlpt | grep "
 alias murder="echo 'cmd: kill -9 ' && kill -9 "
 alias rmrf="echo 'cmd: rm -rf' && rm -rf "
 alias g="git "
-alias e="mvim ."
 
 # size commands
 alias size="echo 'dush - current dir size' &&

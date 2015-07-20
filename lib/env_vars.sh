@@ -1,4 +1,9 @@
-export EDITOR="vim "
+if [ $(uname) == 'Darwin' ]
+then
+  export EDITOR="mvim"
+else
+  export EDITOR="vim"
+fi
 
 # Larger bash history (allow 32³ entries; default is 500)
 export HISTSIZE=32768
