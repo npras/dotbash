@@ -82,3 +82,8 @@ ln -s `pwd`/bashrc.symlink $bashrc
 . $bashrc
 success "setup and sourced .bashrc"
 echo ''
+
+
+info "Setup the executables in ./bin/ to ~/.bin/"
+cp -r `pwd`/bin/* ~/bin/
+success "executables copied to ~/.bin/"
