@@ -21,32 +21,42 @@ fail () {
 
 gemrc=~/.gemrc
 if [ -f "$gemrc" ]; then
-  info "Backing up existing gemrc..."
+  info "backing up existing .gemrc"
   mv $gemrc $gemrc.bckp
+  success "backed up .gemrc"
 fi
 ln -s `pwd`/lib/gemrc.gemrc $gemrc
-info "Sourced .gemrc successfully!"
+success "setup .gemrc"
 
 
 gitconfig=~/.gitconfig
 if [ -f "$gitconfig" ]; then
-  info "Backing up existing gitconfig..."
+  info "backing up existing .gitconfig"
   mv $gitconfig $gitconfig.bckp
+  success "backed up .gitconfig"
 fi
 ln -s `pwd`/lib/gitconfig.gitconfig $gitconfig
-info "gitconfig setup successfully! Make sure your git email is correct though."
+user ' - What is your github author name?'
+read -e git_authorname
+user ' - What is your github author email?'
+read -e git_authoremail
+
+sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" `pwd`/lib/gitconfig_example.gitconfig > $gitconfig
+
+success "setup gitconfig"
 
 
 if [ $(uname) == 'Darwin' ]
 then
   bash_profile=~/.bash_profile
   if [ -f "$bash_profile" ]; then
-    info "Backing up existing bash_profile..."
+    info "backing up existing .bash_profile"
     mv $bash_profile $bash_profile.bckp
+    success "backed up .bash_profile"
   fi
   ln -s `pwd`/bash_profile.bash_profile $bash_profile
   . $bash_profile
-  info "Enjoy your Bash experience :)"
+  success "setup and sourced .bash_profile"
 else
   info "Not setting up .bash_profile because this is Linux (not Darwin)."
 fi
@@ -54,9 +64,10 @@ fi
 
 bashrc=~/.bashrc
 if [ -f "$bashrc" ]; then
-  info "Backing up existing bashrc..."
+  info "backing up existing .bashrc"
   mv $bashrc $bashrc.bckp
+  success "backed up .bashrc"
 fi
 ln -s `pwd`/bashrc.bashrc $bashrc
 . $bashrc
-info "Enjoy your Bash experience :)"
+info "setup and sourced .bashrc"
