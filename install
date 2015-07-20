@@ -25,7 +25,7 @@ if [ -f "$gemrc" ]; then
   mv $gemrc $gemrc.bckp
   success "backed up .gemrc"
 fi
-ln -s `pwd`/lib/gemrc.gemrc $gemrc
+ln -s `pwd`/lib/gemrc.symlink $gemrc
 success "setup .gemrc"
 
 
@@ -40,7 +40,7 @@ read -e git_authorname
 user ' - What is your github author email?'
 read -e git_authoremail
 
-sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" `pwd`/lib/gitconfig_example.gitconfig > $gitconfig
+sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" `pwd`/lib/gitconfig.symlink.example > $gitconfig
 
 success "setup gitconfig"
 
@@ -53,7 +53,7 @@ then
     mv $bash_profile $bash_profile.bckp
     success "backed up .bash_profile"
   fi
-  ln -s `pwd`/bash_profile.bash_profile $bash_profile
+  ln -s `pwd`/bash_profile.symlink $bash_profile
   . $bash_profile
   success "setup and sourced .bash_profile"
 else
@@ -67,6 +67,6 @@ if [ -f "$bashrc" ]; then
   mv $bashrc $bashrc.bckp
   success "backed up .bashrc"
 fi
-ln -s `pwd`/bashrc.bashrc $bashrc
+ln -s `pwd`/bashrc.symlink $bashrc
 . $bashrc
-info "setup and sourced .bashrc"
+success "setup and sourced .bashrc"
