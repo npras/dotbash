@@ -1,0 +1,62 @@
+#!/bin/bash
+
+info () {
+  printf "  [ \033[00;34m..\033[0m ] $1\n"
+}
+
+user () {
+  printf "\r  [ \033[0;33m?\033[0m ] $1 "
+}
+
+success () {
+  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+}
+
+fail () {
+  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
+  echo ''
+  exit
+}
+
+
+gemrc=~/.gemrc
+if [ -f "$gemrc" ]; then
+  info "Backing up existing gemrc..."
+  mv $gemrc $gemrc.bckp
+fi
+ln -s `pwd`/lib/gemrc.gemrc $gemrc
+info "Sourced .gemrc successfully!"
+
+
+gitconfig=~/.gitconfig
+if [ -f "$gitconfig" ]; then
+  info "Backing up existing gitconfig..."
+  mv $gitconfig $gitconfig.bckp
+fi
+ln -s `pwd`/lib/gitconfig.gitconfig $gitconfig
+info "gitconfig setup successfully! Make sure your git email is correct though."
+
+
+if [ $(uname) == 'Darwin' ]
+then
+  bash_profile=~/.bash_profile
+  if [ -f "$bash_profile" ]; then
+    info "Backing up existing bash_profile..."
+    mv $bash_profile $bash_profile.bckp
+  fi
+  ln -s `pwd`/bash_profile.bash_profile $bash_profile
+  . $bash_profile
+  info "Enjoy your Bash experience :)"
+else
+  info "Not setting up .bash_profile because this is Linux (not Darwin)."
+fi
+
+
+bashrc=~/.bashrc
+if [ -f "$bashrc" ]; then
+  info "Backing up existing bashrc..."
+  mv $bashrc $bashrc.bckp
+fi
+ln -s `pwd`/bashrc.bashrc $bashrc
+. $bashrc
+info "Enjoy your Bash experience :)"

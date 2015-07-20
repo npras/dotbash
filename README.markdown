@@ -1,4 +1,9 @@
-Clone the repo into the dotfiles dir located at `~/.dotfiles`.
+```sh
+mkdir ~/.dotfiles && cd ~/.dotfiles
 
-Run the installer:
-`sh install.sh`
+git clone git@github.com:npras/dotbash.git
+
+cd dotbash
+
+./install
+```
