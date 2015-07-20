@@ -1,17 +1,18 @@
 #!/bin/bash
 
+set -e
+
+echo ''
+
 info () {
   printf "  [ \033[00;34m..\033[0m ] $1\n"
 }
-
 user () {
   printf "\r  [ \033[0;33m?\033[0m ] $1 "
 }
-
 success () {
   printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
 }
-
 fail () {
   printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
   echo ''
@@ -27,6 +28,18 @@ if [ -f "$gemrc" ]; then
 fi
 ln -s `pwd`/lib/gemrc.symlink $gemrc
 success "setup .gemrc"
+echo ''
+
+
+gitignore=~/.gitignore
+if [ -f "$gitignore" ]; then
+  info "backing up existing ~/.gitignore"
+  mv $gitignore $gitignore.bckp
+  success "backed up .gitignore"
+fi
+ln -s `pwd`/lib/git/gitignore.symlink $gitignore
+success "setup .gitignore"
+echo ''
 
 
 gitconfig=~/.gitconfig
@@ -39,10 +52,9 @@ user ' - What is your github author name?'
 read -e git_authorname
 user ' - What is your github author email?'
 read -e git_authoremail
-
-sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" `pwd`/lib/gitconfig.symlink.example > $gitconfig
-
+sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" `pwd`/lib/git/gitconfig.symlink.example > $gitconfig
 success "setup gitconfig"
+echo ''
 
 
 if [ $(uname) == 'Darwin' ]
@@ -59,6 +71,7 @@ then
 else
   info "Not setting up .bash_profile because this is Linux (not Darwin)."
 fi
+echo ''
 
 
 bashrc=~/.bashrc
@@ -70,3 +83,4 @@ fi
 ln -s `pwd`/bashrc.symlink $bashrc
 . $bashrc
 success "setup and sourced .bashrc"
+echo ''

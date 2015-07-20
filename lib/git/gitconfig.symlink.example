@@ -65,3 +65,5 @@
   editor = "vim -w"
 [merge]
 	conflictstyle = diff3
+[core]
+	excludesfile = ~/.gitignore
