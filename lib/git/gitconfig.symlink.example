@@ -33,6 +33,7 @@
 	default = current
 [pull]
   default = current
+  rebase = true
 [diff]
   memonicprefix = true
 [branch]
@@ -67,3 +68,4 @@
 	conflictstyle = diff3
 [core]
 	excludesfile = ~/.gitignore
+  autocrlf = false
