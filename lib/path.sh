@@ -9,5 +9,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 if [ $(uname) == 'Darwin' ]
 then
   export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+  export PATH="$(brew --prefix coreutils)/libexec/gnuman:$PATH"
 fi
 
