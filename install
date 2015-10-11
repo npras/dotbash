@@ -46,9 +46,9 @@ if [ -f "$gitconfig" ]; then
   mv $gitconfig $gitconfig.bckp
   success "backed up .gitconfig"
 fi
-user ' - What is your github author name?'
+user ' - What is your git author name?'
 read -e git_authorname
-user ' - What is your github author email?'
+user ' - What is your git author email?'
 read -e git_authoremail
 sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" `pwd`/lib/git/gitconfig.symlink.example > $gitconfig
 success "setup gitconfig"
