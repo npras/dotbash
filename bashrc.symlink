@@ -6,6 +6,7 @@
 . ~/.dotfiles/dotbash/lib/aliases/git.sh
 . ~/.dotfiles/dotbash/lib/aliases/folders.sh
 . ~/.dotfiles/dotbash/lib/aliases/server.sh
+. ~/.dotfiles/dotbash/lib/aliases/work_related.sh
 
 . ~/.dotfiles/dotbash/lib/functions.sh
 . ~/.dotfiles/dotbash/lib/path.sh

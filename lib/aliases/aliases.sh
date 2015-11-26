@@ -23,3 +23,13 @@ du -s * | sort -k1,1rn | head"
 
 # ruby
 alias be="bundle exec "
+alias rls="echo 'rails s ' && rails s "
+alias rlc="echo 'rails c ' && rails c "
+
+# re
+alias s1="ssh cape-production.1"
+alias s2="ssh cape-production.2"
+alias s3="ssh cape-production.3"
+alias s4="ssh cape-production.4"
+alias s5="ssh cape-production.5"
+alias s6="ssh cape-production.6"
