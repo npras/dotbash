@@ -1,4 +1,5 @@
 alias gs="git status"
+alias gf="git flow"
 alias gdf="git diff "
 alias gdfc="git diff --cached "
 
