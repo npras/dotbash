@@ -29,6 +29,17 @@ success "setup .gemrc"
 echo ''
 
 
+irbrc=~/.irbrc
+if [ -f "$irbrc" ]; then
+  info "backing up existing .irbrc"
+  mv $irbrc $irbrc.bckp
+  success "backed up .irbrc"
+fi
+ln -s `pwd`/lib/irbrc.symlink $irbrc
+success "setup .irbrc"
+echo ''
+
+
 gitignore=~/.gitignore
 if [ -f "$gitignore" ]; then
   info "backing up existing ~/.gitignore"
