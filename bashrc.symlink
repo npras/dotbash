@@ -13,5 +13,8 @@
 
 . ~/.dotfiles/dotbash/lib/xmodmap/xmodmap.sh > /dev/null 2>&1
 
+. /usr/local/share/chruby/chruby.sh
+. /usr/local/share/chruby/auto.sh
+
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
