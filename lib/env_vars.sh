@@ -15,3 +15,7 @@ export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
 # Prefer US English and use UTF-8
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
+
+# grep cmd highlight match
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='100;8'
