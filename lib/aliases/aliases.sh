@@ -18,8 +18,8 @@ alias size="echo 'dush - current dir size' &&
             echo 'disksz - disk size'"
 alias dush="echo 'cmd: du -sh' && du -sh"
 alias disksz="echo 'cmd: df -h' && df -h"
-alias dirszsort="echo 'cmd: du -s * | sort -k1,1rn | head' && 
-du -s * | sort -k1,1rn | head"
+alias dirszsort="echo 'cmd: du -sh * | sort -k1,1rn | head' && 
+du -sh * | sort -k1,1rn | head"
 
 # ruby
 alias be="bundle exec "

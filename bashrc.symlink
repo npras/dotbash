@@ -7,12 +7,14 @@
 . ~/.dotfiles/dotbash/lib/aliases/folders.sh
 . ~/.dotfiles/dotbash/lib/aliases/server.sh
 . ~/.dotfiles/dotbash/lib/aliases/work_related.sh
+. ~/.dotfiles/dotbash/lib/aliases/tarsnaps.sh
 
 . ~/.dotfiles/dotbash/lib/functions.sh
 . ~/.dotfiles/dotbash/lib/path.sh
 
 . ~/.dotfiles/dotbash/lib/xmodmap/xmodmap.sh > /dev/null 2>&1
 
+# ruby settings
 . /usr/local/share/chruby/chruby.sh
 . /usr/local/share/chruby/auto.sh
 
