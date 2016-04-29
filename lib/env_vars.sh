@@ -2,7 +2,7 @@ if [ $(uname) == 'Darwin' ]
 then
   export EDITOR="mvim"
 else
-  export EDITOR="vim"
+  export EDITOR="gvim"
 fi
 
 # Larger bash history (allow 32³ entries; default is 500)

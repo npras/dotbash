@@ -95,6 +95,7 @@ success "setup and sourced .bashrc"
 echo ''
 
 
-info "Setup the executables in ./bin/ to ~/.bin/"
+info "Setup the executables in ./bin/ to ~/bin/"
+mkdir ~/bin
 cp -r `pwd`/bin/* ~/bin/
 success "executables copied to ~/.bin/"
