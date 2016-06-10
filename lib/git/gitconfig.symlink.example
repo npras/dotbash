@@ -4,42 +4,74 @@
 
 [alias]
   a = add
-  s = status -s
-  ss = status
+  b = branch
+  ba = branch -a
 
-  cl = clone
-
-  # Add first, see the diffs in an editor, and then commit.
-  ci = commit -v
-  # Add first, and then quickly commit in the terminal.
-  cm = commit -m
-  # Auto-stage all modified and deleted files, and then go for the kill.
+  ### COMMITS
+  # 1. Opens $EDITOR
+  # 2. Review the diff and commit
+  c = commit -v
+  # 1. Auto-stages all modified & deleted files (only tracked files)
+  # 2. Opens $EDITOR
+  # 3. Review the diff and commit
   ca = commit -v -a
-  # Auto-stage, and then quickly commit in the terminal.
-  cam = commit -a -m
-  amend = commit --amend
+  cam = commit --amend
+  fix = commit --amend -C HEAD
 
   co = checkout
-  br = branch
-  bra = branch -a
+  cp = cherry-pick
 
-  lg = log --graph --pretty=format:"%C(bold\\ red)%h%Creset\\ -%C(yellow)%d%Creset\\ %s\\ %Cgreen(%cr)\\ %C(bold\\ blue)%Creset" --abbrev-commit --date=short
+  ### DIFFS
+  d = diff
+  dc = diff --cached
+  dd = diff develop
+  dm = diff master
+  dw = diff --word-diff=color
 
+  f = fetch
+
+  m = merge --no-edit
+  mf = merge --ff-only
+  p = push
+  pu = push -u
+  pl = pull
+
+  ### RESETS
+  r = reset
+  rh = reset --hard
+  rs = reset --soft
+
+  ### REBASES
   rb = rebase
-  d = difftool
-	up = "!git remote update -p; git merge --ff-only @{u}"
+  rba = rebase --abort
+  rbc = rebase --continue
+  rbi = rebase --ignore
+  rmb = !sh -c 'git branch -d $1 && git push origin :$1' -
+  s = status -s
+
+  ### STASHES
+  ss = stash
+  sl = stash list
+  sp = stash pop
+  sa = stash apply
+
 
 [push]
-	default = current
+  default = current
 [pull]
   default = current
   rebase = true
 [diff]
   memonicprefix = true
 [branch]
+  autosetupmerge = always
   autosetuprebase = always
 [apply]
   whitespace = nowarn
+[log]
+  date = local
+[grep]
+  lineNumber = true
 
 [color]
   diff = always
@@ -65,8 +97,8 @@
 [content]
   editor = "vim -w"
 [merge]
-	conflictstyle = diff3
+  conflictstyle = diff3
 [core]
-editor = "vim"
-	excludesfile = ~/.gitignore
+  editor = "vim"
+  excludesfile = ~/.gitignore
   autocrlf = false
