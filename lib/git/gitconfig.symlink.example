@@ -56,6 +56,10 @@
   sp = stash pop
   sa = stash apply
 
+  # list all aliases
+  aliaslist = !sh -c 'git config --list | grep alias'
+  # update local origin branch names
+  brupdate = !sh -c 'git remote update origin --prune'
 
 [push]
   default = current
