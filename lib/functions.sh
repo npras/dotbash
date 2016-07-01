@@ -4,6 +4,12 @@ take() {
   cd $1
 }
 
+# cd into a dir with part of name given
+cdp() {
+  echo 'cmd: cd *$1*'
+  cd *$1*
+}
+
 psgrep() {
   echo 'cmd: ps -ef | grep -i '
   ps -ef | grep -i $1
