@@ -98,4 +98,13 @@ echo ''
 info "Setup the executables in ./bin/ to ~/bin/"
 mkdir ~/bin
 cp -r `pwd`/bin/* ~/bin/
-success "executables copied to ~/.bin/"
+success "executables copied to ~/bin/"
+
+
+if [ $(uname) == 'Darwin' ]
+then
+  info "Copy the launchd files to ~/Library/LaunchAgents dir"
+fi
+cp `pwd`/LaunchAgents/* ~/Library/LaunchAgents/
+success "launchd plist files copied to ~/Library/LaunchAgents dir"
+echo ''

@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# Companion scripts: ./done, ./list
-
-set -e
-
-rm -rf ~/Desktop/todo_"$*"
