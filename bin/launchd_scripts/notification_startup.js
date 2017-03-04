@@ -1,3 +1,5 @@
+delay(60);
+
 var app = Application.currentApplication();
 
 app.includeStandardAdditions = true;
