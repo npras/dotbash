@@ -14,8 +14,11 @@ export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
 
 # Prefer US English and use UTF-8
 export LC_ALL="en_US.UTF-8"
-export LANG="en_US"
+export LANG="en_US.UTF-8"
 
 # grep cmd highlight match
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='100;8'
+
+# ansible vault password file location
+export ANSIBLE_VAULT_PASSWORD_FILE='~/.vault_pass.txt'
