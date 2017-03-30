@@ -23,6 +23,5 @@ du -sh * | sort -k1,1rn | head"
 
 # ruby
 alias be="bundle exec "
-alias rls="echo 'rails s ' && rails s "
-alias rlc="echo 'rails c ' && rails c "
+alias r="bundle exec rails"
 alias serve="echo 'ruby -run -e httpd . -p 3000' && ruby -run -e httpd . -p 3000"
