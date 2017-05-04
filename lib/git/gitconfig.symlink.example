@@ -52,6 +52,7 @@
 
   ### STASHES
   ss = stash
+  sc = stash clear
   sl = stash list
   sp = stash pop
   sa = stash apply
