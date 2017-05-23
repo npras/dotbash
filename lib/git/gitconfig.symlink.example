@@ -105,6 +105,6 @@
 [merge]
   conflictstyle = diff3
 [core]
-  editor = "vim"
+  editor = "nano"
   excludesfile = ~/.gitignore
   autocrlf = false
