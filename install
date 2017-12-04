@@ -40,6 +40,17 @@ success "setup .irbrc"
 echo ''
 
 
+psqlrc=~/.psqlrc
+if [ -f "$psqlrc" ]; then
+  info "backing up existing .psqlrc"
+  mv $psqlrc $psqlrc.bckp
+  success "backed up .psqlrc"
+fi
+ln -s `pwd`/lib/psqlrc.symlink $psqlrc
+success "setup .psqlrc"
+echo ''
+
+
 gitignore=~/.gitignore
 if [ -f "$gitignore" ]; then
   info "backing up existing ~/.gitignore"
