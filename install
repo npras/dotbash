@@ -29,17 +29,6 @@ success "setup .gemrc"
 echo ''
 
 
-irbrc=~/.irbrc
-if [ -f "$irbrc" ]; then
-  info "backing up existing .irbrc"
-  mv $irbrc $irbrc.bckp
-  success "backed up .irbrc"
-fi
-ln -s `pwd`/lib/irbrc.symlink $irbrc
-success "setup .irbrc"
-echo ''
-
-
 psqlrc=~/.psqlrc
 if [ -f "$psqlrc" ]; then
   info "backing up existing .psqlrc"
@@ -77,33 +66,45 @@ success "setup gitconfig"
 echo ''
 
 
-if [ $(uname) == 'Darwin' ]
-then
-  bash_profile=~/.bash_profile
-  if [ -f "$bash_profile" ]; then
-    info "backing up existing .bash_profile"
-    mv $bash_profile $bash_profile.bckp
-    success "backed up .bash_profile"
-  fi
-  ln -s `pwd`/bash_profile.symlink $bash_profile
-  . $bash_profile
-  success "setup and sourced .bash_profile"
-else
-  info "Not setting up .bash_profile because this is Linux (not Darwin)."
-fi
-echo ''
+#if [ $(uname) == 'Darwin' ]
+#then
+  #bash_profile=~/.bash_profile
+  #if [ -f "$bash_profile" ]; then
+    #info "backing up existing .bash_profile"
+    #mv $bash_profile $bash_profile.bckp
+    #success "backed up .bash_profile"
+  #fi
+  #ln -s `pwd`/bash_profile.symlink $bash_profile
+  #. $bash_profile
+  #success "setup and sourced .bash_profile"
+#else
+  #info "Not setting up .bash_profile because this is Linux (not Darwin)."
+#fi
+#echo ''
 
 
-bashrc=~/.bashrc
-if [ -f "$bashrc" ]; then
-  info "backing up existing .bashrc"
-  mv $bashrc $bashrc.bckp
-  success "backed up .bashrc"
+#bashrc=~/.bashrc
+#if [ -f "$bashrc" ]; then
+  #info "backing up existing .bashrc"
+  #mv $bashrc $bashrc.bckp
+  #success "backed up .bashrc"
+#fi
+#ln -s `pwd`/bashrc.symlink $bashrc
+#. $bashrc
+#success "setup and sourced .bashrc"
+#echo ''
+
+zshrc=~/.zshrc
+if [ -f "$zshrc" ]; then
+  info "backing up existing .zshrc"
+  mv $zshrc $zshrc.bckp
+  success "backed up .zshrc"
 fi
-ln -s `pwd`/bashrc.symlink $bashrc
-. $bashrc
-success "setup and sourced .bashrc"
+ln -s `pwd`/zshrc.symlink $zshrc
+. $zshrc
+success "setup and sourced .zshrc"
 echo ''
+
 
 
 info "Setup the executables in ./bin/ to ~/bin/"

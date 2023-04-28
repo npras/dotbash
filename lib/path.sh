@@ -12,3 +12,6 @@ fi
 # NVM
 export NVM_DIR="/Users/prasanna/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# SML/NJ programming language. Coursera course. not needed mostly.
+export PATH=/usr/local/smlnj/bin:"$PATH"
