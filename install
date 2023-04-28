@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 echo ''
 
@@ -57,10 +57,8 @@ if [ -f "$gitconfig" ]; then
   mv $gitconfig $gitconfig.bckp
   success "backed up .gitconfig"
 fi
-user ' - What is your git author name?'
-read -e git_authorname
-user ' - What is your git author email?'
-read -e git_authoremail
+vared -p 'git author name? ' -c git_authorname
+vared -p 'git author email? ' -c git_authoremail
 sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" `pwd`/lib/git/gitconfig.symlink.example > $gitconfig
 success "setup gitconfig"
 echo ''
@@ -113,7 +111,8 @@ cp -r `pwd`/bin/* ~/bin/
 success "executables copied to ~/bin/"
 
 
-if [ $(uname) == 'Darwin' ]
+#if [ $(uname) == 'Darwin' ] # this works in bash
+if [ $(uname) '==' 'Darwin' ] # this works in zsh
 then
   info "Copy the launchd files to ~/Library/LaunchAgents dir"
 fi
