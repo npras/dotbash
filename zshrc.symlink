@@ -89,7 +89,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -136,10 +136,12 @@ alias src="cd ~/src && clear && l"
 alias srcwork="cd ~/src/work && clear && l"
 alias srcself="cd ~/src/self && clear && l"
 alias srcproj="cd ~/src/self/projects && clear && l"
-alias srcmproj="cd ~/src/self/marketing-projects && clear && l"
 
 # POSTGRESQL:
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/postgresql@15/lib"
 export CPPFLAGS="-I/usr/local/opt/postgresql@15/include"
 export PKG_CONFIG_PATH="/usr/local/opt/postgresql@15/lib/pkgconfig"
+
+# autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
