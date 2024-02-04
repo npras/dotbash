@@ -86,11 +86,7 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='nvim'
-fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -110,8 +106,9 @@ fi
 # Pras section
 #
 ## Ruby
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+alias v='mvim'
 
 alias ll='gls -llh --group-directories-first'
 alias lla='gls -llh --group-directories-first -a'
@@ -123,7 +120,6 @@ alias ....='cd ../../.. && l'
 alias rm='rm -i'
 ##
 alias gs="git status"
-alias gf="git flow"
 alias gdf="git diff "
 alias gdfc="git diff --cached "
 # Directory aliases
@@ -138,10 +134,13 @@ alias srcself="cd ~/src/self && clear && l"
 alias srcproj="cd ~/src/self/projects && clear && l"
 
 # POSTGRESQL:
-export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/postgresql@15/lib"
-export CPPFLAGS="-I/usr/local/opt/postgresql@15/include"
-export PKG_CONFIG_PATH="/usr/local/opt/postgresql@15/lib/pkgconfig"
+export PATH="/usr/local/opt/postgresql@16/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/postgresql@16/lib"
+export CPPFLAGS="-I/usr/local/opt/postgresql@16/include"
+export PKG_CONFIG_PATH="/usr/local/opt/postgresql@16/lib/pkgconfig"
 
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+# Add Docker Desktop for Mac (docker)
+export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
